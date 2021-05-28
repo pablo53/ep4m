@@ -3,7 +3,7 @@ Octave functions for analog filters design.
 
 ## examples:
 
-### 3-poles bandpass 100-102kHz filter mesh, 1500 Ohm input and outut impedance
+#### 1. A 3-poles bandpass 100-102kHz filter mesh, 1500 Ohm input and outut impedance
 
 Design the ```topology``` and compute element ```values```:
 
@@ -40,4 +40,12 @@ Print the design (with element values rounded to their nearest E6 series values)
         100nF     |
 ```
 
+Analyze the frequency response of this quadripole in the range 90-110kHz with 100Hz step, when excitating it with a source of 1500 Ohm (connected in series to the top of the topology) and loading it with 1500 Ohm (connected in shunt to the bottom of the topology):
+
+```octave:3> frequencies = 90000:100:110000```
+```octave:4> [attenuations, phaseshifts] = efreqanalyze(topology, values, frequencies, 1500, 1500)```
+
+Plot the computed attenuation per frequency on the logarithmic scale [dB]:
+
+```octave:5> elogplot(frequencies, attenuations)```
 
