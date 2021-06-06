@@ -46,6 +46,8 @@ function ehelp()
   disp(sprintf("ekuroda: transforms the net with Kuroda's identities."));
   disp(sprintf("ekurodaall: transforms the whole net with Kuroda's identities."));
   disp(sprintf("elinvill: calulates Linvill stability factor from ABCD transfer parameters"));
+  disp(sprintf("eladderbutt: calculates element values for a crystal ladder (Butterworth)"));
+  disp(sprintf("eladdercheb: calculates element values for a crystal ladder (Chebyshev)"));
   disp(sprintf("emag: calulates maximum available gain [dB] from S parameters"));
   disp(sprintf("ematchattenuator: Computes a matching attenuator."));
   disp(sprintf("emstripimp: approximates characteristic impedance of a microstrip line with given geometry"));
