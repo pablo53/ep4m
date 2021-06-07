@@ -6,7 +6,7 @@ function [c0, ck, lk] = ecrystal(fs, fr, fr1, c)
     printf("  %s\n", "fr - shunt frequency (the highest frequency giving min throughput)");
     printf("  %s\n", "fr1 - shifted shunt frequency (in the middle between fr and fs, after adding a capacitor in parallel with the crystal oscillator) giving shifted min throughput");
     printf("  %s\n", "c - parallel capacitance added to compute fr1");
-    printf("%s\n", "returns: [c0, ck, cl], where");
+    printf("%s\n", "returns: [c0, ck, lk], where");
     printf("  %s\n", "c0 - parallel capacitance");
     printf("  %s\n", "ck - series capacitance");
     printf("  %s\n", "lk - series inductance");
