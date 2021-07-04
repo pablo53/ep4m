@@ -52,3 +52,43 @@ Plot the computed attenuation per frequency on the logarithmic scale [dB]:
 
 ![example 1 - frequency response](ex1.jpg)
 
+## 2) A 5-pole Chebyshev Low-Pass Filter with cut off frequency 20 MHz of 50 Ohm input and 1500 Ohm output impedance
+
+```octave:1> [t1, v1] = eproto2butt(5, false)```
+
+```octave:2> [t2, v2] = escalefilter(t1, v1, 1500, NaN, 20e+6)```
+
+```octave:3> [t3, v3] = eimpmatchtapc(t2, v2, 50, 1500)```
+
+```octave:4> [topology, values] = eterminate(t3, v3)```
+
+```octave:5> eprintladder(topology, eround(values, 12))```
+
+```
+                  o
+                  |
+         C1       |
+ |-------||-------+
+        18pF      |
+             C2   |
+                 ===
+            3.8pF |
+                  |
+                 (_
+            L1   (_
+           18uH  (_
+                  |
+         C3       |
+ |-------||-------+
+        10pF      |
+                  |
+                 (_
+            L2   (_
+           18uH  (_
+                  |
+         C4       |
+ |-------||-------+
+        3.2pF     |
+                  |
+                  o
+```
