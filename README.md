@@ -92,3 +92,47 @@ Plot the computed attenuation per frequency on the logarithmic scale [dB]:
                   |
                   o
 ```
+
+## 3) Crystall ladder bandpass filter design - 4-pole, 2.5kHz bandwith @ 6MHz, Chebyshev characteristic
+
+Get a crystal oscillator equivalent, based on its characteristic frequencies measured with a network analyzer (here, an example 6MHz crystall oscillator):
+
+```octave:1> [xtaltop, xtalvals] = ecrystal(5.99756e+6, 6.00964e+6, 6.00377e+6, 4.7e-12, 100);```
+
+Generate filter network with its values and characteristic impedance:
+
+```octave:2> [tt, vv, rr] = eladdercheb(4, 2500, xtalvals);```
+
+Print the network (round capacitor values to the nearest E12 series):
+
+```octave:3> eprintladder(tt, eround(vv, 12, tt))```
+
+```
+             C1   |             
+                 ===            
+            68pF  |             
+         XTAL1   -|-            
+         6MHz    [_]            
+                 -|-            
+         C2       |             
+ |-------||-------+             
+        68pF      |             
+         XTAL2   -|-            
+         6MHz    [_]            
+                 -|-            
+         C3       |             
+ |-------||-------+             
+        68pF      |             
+         XTAL3   -|-            
+         6MHz    [_]            
+                 -|-            
+         C4       |             
+ |-------||-------+             
+        68pF      |             
+         XTAL4   -|-            
+         6MHz    [_]            
+                 -|-            
+             C5   |             
+                 ===            
+            68pF  |             
+```
