@@ -20,6 +20,7 @@ function eprintladder(typestr, elemvals, sym, cbpartname)
   cntt = 0;
   cntnet = 0;
   cnts = 0;
+  cntxtal = 0;
   cnt = 0;
   swimlanes = 1;
   vals = [];
@@ -40,7 +41,7 @@ function eprintladder(typestr, elemvals, sym, cbpartname)
 	  swimlanes = swimlanes - 1;
 	endif;
 	if (cnt == swimlanes)
-	  [cntl, cntr, cntc, cntt, cntnet, cnts, cntic] = eprintelem(elems, vals, sym, cntl, cntr, cntc, cntt, cntnet, cnts, cntic, cbpartname);
+	  [cntl, cntr, cntc, cntt, cntnet, cnts, cntxtal, cntic] = eprintelem(elems, vals, sym, cntl, cntr, cntc, cntt, cntnet, cnts, cntxtal, cntic, cbpartname);
       vals = [];
       elems = "";
 	  cnt = 0;

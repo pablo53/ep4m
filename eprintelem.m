@@ -1,7 +1,8 @@
-function [cntl, cntr, cntc, cntic, cntt, cntnet, cnts, lineno] = eprintelem(elem, vals, sym, oldcntl, oldcntr, oldcntc, oldcntic, oldcntt, oldcntnet, oldcnts, cbpartname, lineno)
+function [cntl, cntr, cntc, cntt, cntnet, cnts, cntxtal, cntic, lineno] = eprintelem(elem, vals, sym, oldcntl, oldcntr, oldcntc, oldcntt, oldcntnet, oldcnts, oldcntxtal, oldcntic, cbpartname, lineno)
     cntl = oldcntl;
     cntr = oldcntr;
     cntc = oldcntc;
+    cntxtal = oldcntxtal;
     cntic = oldcntic;
 	cntt = oldcntt;
 	cntnet = oldcntnet;
@@ -21,10 +22,10 @@ function [cntl, cntr, cntc, cntic, cntt, cntnet, cnts, lineno] = eprintelem(elem
 	  strB = " ";
 	  str0 = "|";
 	endif;
-	if (nargin < 12)
+	if (nargin < 13)
 	  lineno = 1;
 	  while (lineno > 0)
-		[cntl, cntr, cntc, cntic, cntt, cntnet, cnts, lineno] = eprintelem(elem, vals, sym, cntl, cntr, cntc, cntic, cntt, cntnet, cnts, cbpartname, lineno);
+		[cntl, cntr, cntc, cntt, cntnet, cnts, cntxtal, cntic, lineno] = eprintelem(elem, vals, sym, cntl, cntr, cntc, cntt, cntnet, cnts, cntxtal, cntic, cbpartname, lineno);
 		printf("\n");
 	  endwhile;
 	elseif (columns(elem) > 1)
@@ -32,7 +33,7 @@ function [cntl, cntr, cntc, cntic, cntt, cntnet, cnts, lineno] = eprintelem(elem
 	  cnt = 0;
 	  for e = elem
 	    cnt = cnt + 1;
-	    [cntl, cntr, cntc, cntic, cntt, cntnet, cnts, lineno1] = eprintelem(e, vals(:, cnt), sym, cntl, cntr, cntc, cntic, cntt, cntnet, cnts, cbpartname, lineno);
+	    [cntl, cntr, cntc, cntt, cntnet, cnts, cntxtal, cntic, lineno1] = eprintelem(e, vals(:, cnt), sym, cntl, cntr, cntc, cntt, cntnet, cnts, cntxtal, cntic, cbpartname, lineno);
 		if (lineno1 > 0)
 		  newlineno = lineno1;
 		endif;
@@ -879,6 +880,27 @@ function [cntl, cntr, cntc, cntic, cntt, cntnet, cnts, lineno] = eprintelem(elem
 		      lineno = 0;
 			endif;
 		  endif;
+        case 'X'
+          switch (lineno)
+            case 1
+			  cntxtal = cntxtal + 1;
+              printf (" %s       XTAL%-3i _|_            ", strI, cntxtal);
+			  lineno = lineno + 1;
+            case 2
+			  rk = vals(1);
+			  lk = vals(2);
+			  ck = vals(3);
+			  c0 = vals(4);
+			  fs = 1 / (2 * pi * sqrt(lk * ck));
+			  printf (" %s    %-10s [ ]            ", strI, efmtstr(fs, "Hz"));
+			  lineno = lineno + 1;
+            case 3
+              printf (" %s               -|-            ", strI);
+			  lineno = 0;
+            otherwise
+              printf (" %s                |             ", strI);
+			  lineno = 0;
+          endswitch;
         case '-'
           printf (" %s----------------+             ", str0);
 		  lineno = 0;
