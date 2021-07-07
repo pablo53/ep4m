@@ -12,10 +12,10 @@ function [ladder, vals] = ecrystal(fs, fr, fr1, c, rk, series)
   endif;
 
   if (nargin < 6)
-    series = true
+    series = true;
   endif;
 
-  [c0, ck, lk] = ecrystalparams(fs, fr, fr1, c)
+  [c0, ck, lk] = ecrystalparams(fs, fr, fr1, c);
   if (series)
     ladder = "X";
   else
