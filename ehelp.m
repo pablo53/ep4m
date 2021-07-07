@@ -11,8 +11,8 @@ function ehelp()
   disp(sprintf("eattenuator: Computes an attenuator."));
   disp(sprintf("eboltzman: Returns Boltzman's constant."));
   disp(sprintf("ec: speed of light."));
-  disp(sprintf("ecrystal: comput characteristics of a crystal oscillator."));
-  disp(sprintf("ecrystalequiv: RLC equivalent of a crystal oscillator."));
+  disp(sprintf("ecrystal: crystal oscillator for given parameters."));
+  disp(sprintf("ecrystalparams: compute characteristics of a crystal oscillator."));
   disp(sprintf("ecoupledres: Creates a ladder of coupled resonators."));
   disp(sprintf("edbm2v: Converts voltage/power expressed in dBm into Volts"));
   disp(sprintf("eelectroncharge: electron charge in coulombs"));

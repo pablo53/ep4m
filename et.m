@@ -61,6 +61,18 @@ function t = et(elem, val, s)
 		  el = val(2) * s / i;
 		  z = -i * val(1) * cot(el);
 		  t = [1, 0; (1 / z), 1];
+		case 'x'
+		  rk = vals(1);
+		  lk = vals(2);
+		  ck = vals(3);
+		  c0 = vals(4);
+		  t = [1, 0; s * c0 + 1 / (rk + s * lk + 1 / (s * ck)), 1]
+		case 'X'
+		  rk = vals(1);
+		  lk = vals(2);
+		  ck = vals(3);
+		  c0 = vals(4);
+		  t = [1, 1 / (s * c0 + 1 / (rk + s * lk + 1 / (s * ck))); 0, 1]
 		case '_'
 		  el = val(2) * s / i;
 		  z = i * val(1) * tan(el);
