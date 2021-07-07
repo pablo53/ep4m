@@ -905,7 +905,7 @@ function [cntl, cntr, cntc, cntt, cntnet, cnts, cntxtal, cntic, lineno] = eprint
           switch (lineno)
             case 1
 			  cntxtal = cntxtal + 1;
-              printf (" %s       XTAL%-3i _|_            ", strI, cntxtal);
+              printf (" %s       XTAL%-3i -|-            ", strI, cntxtal);
 			  lineno = lineno + 1;
             case 2
 			  rk = vals(1);
@@ -913,7 +913,7 @@ function [cntl, cntr, cntc, cntt, cntnet, cnts, cntxtal, cntic, lineno] = eprint
 			  ck = vals(3);
 			  c0 = vals(4);
 			  fs = 1 / (2 * pi * sqrt(lk * ck));
-			  printf (" %s    %-10s [_]            ", strI, efmtstr(fs, "Hz"));
+			  printf (" %s       %-7s [_]            ", strI, efmtstr(fs, "Hz"));
 			  lineno = lineno + 1;
             case 3
               printf (" %s               -|-            ", strI);
