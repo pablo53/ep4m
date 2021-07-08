@@ -30,9 +30,9 @@ function [topology, vals, r] = eladderbutt(poles, df, xtalvals)
       c2 = [0.0344 / (lk * fs * df); NaN; NaN; NaN];
       c3 = [0.0457 / (lk * fs * df); NaN; NaN; NaN];
       c4 = [0.0497 / (lk * fs * df); NaN; NaN; NaN];
-      c5 = [1 / ((1 / c1) + (1 / c2) - (1 / c3) - (1 / c4)); NaN; NaN; NaN];
-      c6 = [1 / ((1 / c1) - (1 / c3)); NaN; NaN; NaN];
-      topology = "CXcXcXCcCXcXCxCXcXcXC"
+      c5 = [1 / ((1 / c1(1)) + (1 / c2(1)) - (1 / c3(1)) - (1 / c4(1))); NaN; NaN; NaN];
+      c6 = [1 / ((1 / c1(1)) - (1 / c3(1))); NaN; NaN; NaN];
+      topology = "CXcXcXCcCXcXCcCXcXcXC";
       vals = [c2, xtalvals, c1, xtalvals, c2, xtalvals, c6, c3, c5, xtalvals, c4, xtalvals, c5, c3, c6, xtalvals, c2, xtalvals, c1, xtalvals, c2];
     otherwise
       printf("incorrect number of poles");
