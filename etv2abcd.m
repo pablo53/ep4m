@@ -65,6 +65,10 @@ function [tm] = etv2abcd(top, vals, freq, alpha, callb)
           t{cntt} = t{cntt} * et(elem, val, s);
 		case '|'
           t{cntt} = t{cntt} * et(elem, val, s);
+		case 'x'
+          t{cntt} = t{cntt} * et(elem, val, s);
+		case 'X'
+          t{cntt} = t{cntt} * et(elem, val, s);
 		case '_'
           t{cntt} = t{cntt} * et(elem, val, s);
 		case '='
