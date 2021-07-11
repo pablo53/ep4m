@@ -1,10 +1,10 @@
 function [edeg] = epolyorder(ep)
   edeg = NaN;
   if (nargin != 1)
-    printf("\nepolyorder(ep): Computes polynominal order.\n");
-    printf("  ep - encoded polynominal\n");
+    printf("\nepolyorder(ep): Computes polynomial order.\n");
+    printf("  ep - encoded polynomial\n");
     printf("\n");
-    printf("returns: polynominal order \n");
+    printf("returns: polynomial order \n");
     return;
   endif;
   

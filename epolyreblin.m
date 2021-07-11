@@ -3,8 +3,8 @@ function [pp2, pq2] = epolyreblin(pp, pq, tsam)
   pq2 = [];
   if (nargin != 3)
     printf("\nepolyreblin(ep, eq, tsam) - bilinear transformation, i.e. puts s = 2/T * (z+1)/(z-1).\n");
-    printf("  ep   - encoded polynominal (numerator)\n");
-    printf("  eq   - encoded polynominal (denominator)\n");
+    printf("  ep   - encoded polynomial (numerator)\n");
+    printf("  eq   - encoded polynomial (denominator)\n");
     printf("  tsam - sampling period\n");
     printf("\n");
     printf("returns: [ ep', eq' ] (transformed and normalized: numerator and denominator)\n");

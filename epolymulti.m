@@ -1,9 +1,9 @@
 function [em] = epolymulti(ep, eq)
   em = [];
   if (nargin != 2)
-    printf("\nepolymulti(ep, eq) - multiplies two polynominals.\n");
-    printf("  ep  - encoded polynominal\n");
-    printf("  eq  - encoded polynominal\n");
+    printf("\nepolymulti(ep, eq) - multiplies two polynomials.\n");
+    printf("  ep  - encoded polynomial\n");
+    printf("  eq  - encoded polynomial\n");
     printf("\n");
     printf("returns: [ ep * eq ]\n");
     return;

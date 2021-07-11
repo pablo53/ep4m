@@ -61,6 +61,7 @@ function ehelp()
   disp(sprintf("enoiseshottky: Computes shot noise."));
   disp(sprintf("enoisethermal: Computes thermal noise."));
   disp(sprintf("eplanck: Returns Planck constant."));
+  disp(sprintf("epolyfrac2: synthesize ladder of the given transfer function."));
   disp(sprintf("eprintladder: prints mesh based on its topology and its element values"));
   disp(sprintf("eproto2butt: gives a prototype Butterworth filter"));
   disp(sprintf("eproto2cheb1: gives a prototype Chebyshev filter"));

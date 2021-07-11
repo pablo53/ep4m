@@ -136,3 +136,38 @@ Print the network (round capacitor values to the nearest E12 series):
                  ===            
             68pF  |             
 ```
+
+## 4) Quadruple Synthesis
+
+Let us syntheisize a ladder of transmittance:
+
+```
+         4     2
+        s  + 6s  + 5
+Z(s) = --------------
+            2
+           s  + 3s
+```
+
+```octave:1> nom = epolyencode([5 0 6 0 1]);```
+
+```octave:2> denom = epolyencode([0 3 0 1]);```
+
+```octave:3> [t, v] = epolyfrac2(nom, denom);```
+
+```octave:4> eprintladder(t, v);```
+
+```
+             C1   |             
+                 ===            
+            600mF |             
+         L1       |             
+ |-----(_(_(_)----+             
+        1.44H     |             
+             C2   |             
+                 ===            
+            71mF  |             
+         L2       |             
+ |-----(_(_(_)----+             
+        3.25H     |             
+```

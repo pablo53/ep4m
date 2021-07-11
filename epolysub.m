@@ -1,9 +1,9 @@
 function [ea] = epolysub(ep, eq)
   ea = [];
   if (nargin != 2)
-    printf("\nepolysub(ep, eq) - difference of two polynominals.\n");
-    printf("  ep  - encoded polynominal\n");
-    printf("  eq  - encoded polynominal\n");
+    printf("\nepolysub(ep, eq) - difference of two polynomials.\n");
+    printf("  ep  - encoded polynomial\n");
+    printf("  eq  - encoded polynomial\n");
     printf("\n");
     printf("returns: [ ep - eq ]\n");
     return;

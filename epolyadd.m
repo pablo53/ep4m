@@ -1,9 +1,9 @@
 function [ea] = epolyadd(ep, eq)
   ea = [];
   if (nargin != 2)
-    printf("\nepolyadd(ep, eq) - sum of two polynominals.\n");
-    printf("  ep  - encoded polynominal\n");
-    printf("  eq  - encoded polynominal\n");
+    printf("\nepolyadd(ep, eq) - sum of two polynomials.\n");
+    printf("  ep  - encoded polynomial\n");
+    printf("  eq  - encoded polynomial\n");
     printf("\n");
     printf("returns: [ ep + eq ]\n");
     return;

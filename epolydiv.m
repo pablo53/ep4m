@@ -1,11 +1,11 @@
 function [ep, eq, ed] = epolydiv(ep, eq, dir, bylowest)
   ed = [];
   if ((nargin != 3) && (nargin != 4))
-    printf("\nepolydiv(ep, eq, dir[, bylowest]) - divides two polynominals.\n");
+    printf("\nepolydiv(ep, eq, dir[, bylowest]) - divides two polynomials.\n");
     printf("  ep       - encoded polynominal\n");
     printf("  eq       - encoded polynominal\n");
     printf("  dir      - direction (0 means ep is numerator and eq is denominator, 1 means eq is numerator and ep is denominator)\n");
-    printf("  bylowest - if true, divides the lowest factors of both polynominals, if false (default) - the highest ones\n");
+    printf("  bylowest - if true, divides the lowest factors of both polynomials, if false (default) - the highest ones\n");
     printf("\n");
     printf("returns: [ ep (if denominator) or rest of it (if it was the numerator)\n");
     printf("           the rest of eq (if numerator) or eq itself (if it was the denominator)\n");

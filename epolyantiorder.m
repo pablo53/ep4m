@@ -1,10 +1,10 @@
 function [edeg] = epolyantiorder(ep)
   edeg = NaN;
   if (nargin != 1)
-    printf("\nepolyantiorder(ep): Computes polynominal minimal factor order.\n");
-    printf("  ep - encoded polynominal\n");
+    printf("\nepolyantiorder(ep): Computes polynomial minimal factor order.\n");
+    printf("  ep - encoded polynominl\n");
     printf("\n");
-    printf("returns: polynominal order \n");
+    printf("returns: polynomial order \n");
     return;
   endif;
   

@@ -1,10 +1,10 @@
 function ep = epolyencode(p)
   ep = zeros(2, 0);
   if (nargin != 1)
-    printf("\nepolyencode(p) - encodes a polynominal.\n");
-    printf("  p     - polynominal to be encoded\n");
+    printf("\nepolyencode(p) - encodes a polynomial.\n");
+    printf("  p     - polynomial to be encoded\n");
     printf("\n");
-    printf("returns: [ encoded polynominal ]\n");
+    printf("returns: [ encoded polynomial ]\n");
     return;
   endif;
   

@@ -2,8 +2,8 @@ function [fr, sh, p] = epolyfrac(p)
   fr = [];
   sh = [];
   if (nargin != 1)
-    printf("\npolyfrac(p): divides odd (even) part of the polynominal by even (odd) one.\n");
-    printf("  p - polynominal coefficients\n");
+    printf("\npolyfrac(p): divides odd (even) part of the polynomial by even (odd) one.\n");
+    printf("  p - polynomial coefficients\n");
     printf("\n");
     printf("returns: [ fractions,\n");
     printf("           shunt or parallel,\n");

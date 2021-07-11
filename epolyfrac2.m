@@ -3,11 +3,11 @@ function [t, v, ok] = epolyfrac2(p, q, shunt, bylowest, maxorder)
   v = [];
   ok = false;
   if (nargin != 2 && nargin != 3 && nargin != 4 && nargin != 5)
-    printf("\npolyfrac2(p, q[, shunt[, bylowest[, maxorder]]]): synthesize ladder of the given transfer function.\n");
-    printf("  p        - numerator polynominal coefficients\n");
-    printf("  q        - denominator polynominal coefficients\n");
+    printf("\nepolyfrac2(p, q[, shunt[, bylowest[, maxorder]]]): synthesize ladder of the given transfer function.\n");
+    printf("  p        - numerator polynomial coefficients\n");
+    printf("  q        - denominator polynomial coefficients\n");
     printf("  shunt    - preferences, whether preferred first shunt (true, default) or parallel (false)\n")
-    printf("  bylowest - preferences, whether try to divide polynominals first with its lowest factors");
+    printf("  bylowest - preferences, whether try to divide polynomials first with its lowest factors");
     printf("  maxorder - \n");
     printf("\n");
     printf("returns: [ ladder,\n");
