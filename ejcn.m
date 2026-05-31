@@ -1,6 +1,6 @@
-function sn = esn(u, k, epsilon, maxstepsapprox)
+function cn = ejcn(u, k, epsilon, maxstepsapprox)
   if (nargin < 2)
-    printf("esn(u,k): Jacobian elliptic sine function\n");
+    printf("ejcn(u,k): Jacobian elliptic cos function\n");
     return;
   endif;
   if (nargin < 3)
@@ -33,5 +33,5 @@ function sn = esn(u, k, epsilon, maxstepsapprox)
     a = a(2:end);
     c = c(2:end);
   endwhile;
-  sn = sin(phin);
+  cn = cos(phin);
 endfunction
